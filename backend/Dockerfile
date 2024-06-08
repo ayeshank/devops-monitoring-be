@@ -42,6 +42,9 @@ COPY . .
 # Copy the .env file
 COPY .env .env
 
+ARG DATABASE_URL
+ENV DATABASE_URL=$DATABASE_URL
+
 # Generate Prisma client
 RUN npx prisma generate
 
